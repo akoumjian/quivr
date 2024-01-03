@@ -53,6 +53,7 @@ from .errors import (
     ValidationError,
 )
 from .linkage import Linkage, MultiKeyLinkage, combine_linkages, combine_multilinkages
+from .sort import sort_on_disk
 from .tables import (
     AnyTable,
     ArrowArrayProvider,
@@ -130,6 +131,7 @@ __all__ = [
     "is_in",
     "le",
     "lt",
+    "sort_on_disk",
     "InvalidColumnDataError",
     "ArrowArrayProvider",
 ]

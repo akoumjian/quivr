@@ -5,9 +5,9 @@ import sys
 from io import IOBase
 
 if sys.version_info < (3, 11):
-    from typing_extensions import Self
+    from typing_extensions import Self, TypeAlias
 else:
-    from typing import Self
+    from typing import Self, TypeAlias
 
 from typing import (
     Any,
@@ -19,7 +19,6 @@ from typing import (
     Optional,
     Protocol,
     Type,
-    TypeAlias,
     TypeVar,
     Union,
     cast,
@@ -50,7 +49,7 @@ class ArrowArrayProvider(Protocol):
 
 AttributeValueType: TypeAlias = Union[int, float, str]
 DataSourceType: TypeAlias = Union[
-    pa.Array, list[Any], "Table", pd.Series, npt.NDArray[Any], ArrowArrayProvider
+    pa.Array, list[Any], "Table", pd.Series, npt.NDArray[Any], ArrowArrayProvider  # type: ignore
 ]
 AnyTable = TypeVar("AnyTable", bound="Table")
 

@@ -39,7 +39,9 @@ include = [
 [tool.hatch.version]
 path = "quivr/__version__.py"
 
+
 [tool.hatch.envs.dev]
+python = "3.11"
 dependencies = [
   "black",
   "isort",
